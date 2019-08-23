@@ -2,7 +2,7 @@
 set -e
 #CURRENT_FOLDER=`pwd`
 # this file have certificate + key
-PATH_TO_FILE="mycert.pem"
+PATH_TO_FILE="mitmproxy.pem"
 EXTENSION="${PATH_TO_FILE##*.}"
 
 TEMP=`cat ${PATH_TO_FILE}`
