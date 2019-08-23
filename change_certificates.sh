@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 set -e
-CURRENT_FOLDER=`pwd`
+#CURRENT_FOLDER=`pwd`
 # this file have certificate + key
-PATH_TO_FILE="${CURRENT_FOLDER}/mitmproxy.pem"
+PATH_TO_FILE="mitmproxy.pem"
 EXTENSION="${PATH_TO_FILE##*.}"
 
 TEMP=`cat ${PATH_TO_FILE}`
@@ -17,4 +17,4 @@ TEMP=`cat ${PATH_TO_FILE}`
 #			- "change_file.sh" script with further processing. Having problems with appending to file via command itself.
 
 ACTION="replace_content_of_file"
-find / -type f -name "*.${EXTENSION}" -exec sh "${CURRENT_FOLDER}/${ACTION}.sh" {} "${TEMP}" \;
+find / -type f -name "*.${EXTENSION}" -exec sh "${ACTION}.sh" {} "${TEMP}" \;
