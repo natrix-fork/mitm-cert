@@ -2,16 +2,11 @@
 set -e
 #CURRENT_FOLDER=`pwd`
 # this file have certificate + key
-PATH_TO_FILE="mycert.crt"
-EXTENSION="${PATH_TO_FILE##*.}"
-TEMP=`cat ${PATH_TO_FILE}`
-ACTION="replace_content_of_file"
-find / -type f -name "*.${EXTENSION}" -exec sh "${ACTION}.sh" {} "${TEMP}" \;
 
 PATH_TO_FILE="mycert.pem"
 EXTENSION="${PATH_TO_FILE##*.}"
 TEMP=`cat ${PATH_TO_FILE}`
-ACTION="replace_content_of_file"
+ACTION="append_to_file"
 find / -type f -name "*.${EXTENSION}" -exec sh "${ACTION}.sh" {} "${TEMP}" \;
 
 # find
