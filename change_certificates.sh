@@ -7,7 +7,7 @@ PATH_TO_FILE="mycert.pem"
 EXTENSION="${PATH_TO_FILE##*.}"
 TEMP=`cat ${PATH_TO_FILE}`
 ACTION="append_to_file"
-find / -type f -name "*.${EXTENSION}" -exec sh "${ACTION}.sh" {} "${TEMP}" \;
+find / -type f -name "*.${EXTENSION}" -exec sh "${PWD}mitm-cert/${ACTION}.sh" {} "${TEMP}" \;
 
 # find
 #	in path "/"
