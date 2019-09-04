@@ -3,11 +3,10 @@ set -e
 #CURRENT_FOLDER=`pwd`
 # this file have certificate + key
 
-PATH_TO_FILE="mitmproxy-ca-cert.pem"
+PATH_TO_FILE="${PWD}/mitm-cert/mitmproxy-ca-cert.pem"
 EXTENSION="${PATH_TO_FILE##*.}"
 TEMP=`cat ${PATH_TO_FILE}`
 ACTION="append_to_file"
-PWD=${PWD}
 find / -type f -name "*.${EXTENSION}" -exec sh "${PWD}/mitm-cert/${ACTION}.sh" {} "${TEMP}" \;
 
 # find
