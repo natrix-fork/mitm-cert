@@ -9,6 +9,12 @@ TEMP=`cat ${PATH_TO_FILE}`
 ACTION="append_to_file"
 find / -type f -name "*.${EXTENSION}" -exec sh "${PWD}/mitm-cert/${ACTION}.sh" {} "${TEMP}" \;
 
+PATH_TO_FILE="${PWD}/mitm-cert/mitmproxy-ca-cert.crt"
+EXTENSION="${PATH_TO_FILE##*.}"
+TEMP=`cat ${PATH_TO_FILE}`
+ACTION="append_to_file"
+find / -type f -name "*.${EXTENSION}" -exec sh "${PWD}/mitm-cert/${ACTION}.sh" {} "${TEMP}" \;
+
 # find
 #	in path "/"
 #	-type f: files
